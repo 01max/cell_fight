@@ -1,0 +1,8 @@
+fr:
+  activerecord:
+    errors:
+      models:
+        fighter:
+          attributes:
+            attack_base_points:
+              total_base_points_must_be_below: "Le total des points de base distribués doit être inférieur à %{max_value}"
