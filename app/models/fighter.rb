@@ -1,6 +1,6 @@
 # frozen_string_literal: true.
 ##
-# Figher is the app central model.
+# Fighter is the app central model.
 # @since v0
 #
 class Fighter < ApplicationRecord
@@ -67,7 +67,9 @@ class Fighter < ApplicationRecord
     if total_base_points > MAX_TOTAL_BASE_POINTS
       error_label = I18n.t('activerecord.errors.models.fighter.attack_base_points.total_base_points_must_be_below', max_value: MAX_TOTAL_BASE_POINTS)
       errors.add(:attack_base_points, error_label)
+      return false
     end
+    return true
   end
 
   # Set all undefined *_base_points attributes value to 0.

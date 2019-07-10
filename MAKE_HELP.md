@@ -6,7 +6,7 @@
 
 # SPEC RELATED
 
-  - spec_fast             alias for rspec fail-fast mode.
+  - rspec                 alias for rspec.
 
 # OTHER
 
