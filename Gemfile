@@ -30,6 +30,7 @@ gem 'haml'
 
 gem 'jquery-rails'
 gem 'bootstrap'
+gem 'font_awesome5_rails'
 
 group :development, :test do
   gem 'faker'

@@ -1,7 +1,9 @@
 %header.mb-5
   %nav.navbar.navbar-expand-md.navbar-dark.bg-dark
     .container
-      = link_to t('shared.header.title'), root_url, { class: 'navbar-brand' }
+      = link_to root_url, { class: 'navbar-brand' } do
+        %i.fas.fa-vials
+        %strong= t('shared.header.title')
       %button.navbar-toggler{ data: { toggle: :collapse, taget: '#main-nav' }, aria: { controls: 'main-nav', expanded: false } }
         %span.navbar-toggler-icon
 
