@@ -10,9 +10,10 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_07_10_144359) do
+ActiveRecord::Schema.define(version: 2019_07_10_153353) do
 
   # These are extensions that must be enabled in order to support this database
+  enable_extension "hstore"
   enable_extension "plpgsql"
 
   create_table "fighters", force: :cascade do |t|
@@ -23,6 +24,20 @@ ActiveRecord::Schema.define(version: 2019_07_10_144359) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.string "color_code"
+    t.integer "xp", default: 1
+  end
+
+  create_table "fights", force: :cascade do |t|
+    t.bigint "fighter_a_id"
+    t.bigint "fighter_b_id"
+    t.bigint "winner_id"
+    t.json "hits", default: {}
+    t.integer "xp_gain", default: 0
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["fighter_a_id"], name: "index_fights_on_fighter_a_id"
+    t.index ["fighter_b_id"], name: "index_fights_on_fighter_b_id"
+    t.index ["winner_id"], name: "index_fights_on_winner_id"
   end
 
 end

@@ -33,6 +33,8 @@ class Fighter < ApplicationRecord
   after_initialize :set_default_base_points
   after_initialize :set_default_color
 
+  attr_accessor :current_health
+
   # String version of the instance (using +name+ & +id+).
   # @return [String]
   #
@@ -60,6 +62,21 @@ class Fighter < ApplicationRecord
     (total_base_points + defense_base_points.to_i + health_base_points.to_i*2)*10
   end
 
+
+  # Compute the damages of a hit blown to a different Fighter (partially randomized)
+  # @return [Integer]
+  # @see attack_base_points
+  # @see defense_base_points
+  #
+  def hit(opponent)
+    raise 'Cannot hit himself' if self == opponent
+
+    theoretical_damages = self.attack_base_points - opponent.defense_base_points
+    real_damages = rand((theoretical_damages/2)..(theoretical_damages*2))
+
+    return opponent.current_health > real_damages ? real_damages : opponent.current_health
+  end
+
   private
 
   # Validation that +total_base_points+ is not above Fighter::MAX_TOTAL_BASE_POINTS
@@ -81,6 +98,7 @@ class Fighter < ApplicationRecord
     self.attack_base_points ||= 0
     self.defense_base_points ||= 0
     self.health_base_points ||= 0
+    self.current_health = self.max_health
   end
 
   # Set a default value for color_code.
