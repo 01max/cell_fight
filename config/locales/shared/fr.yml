@@ -1,0 +1,11 @@
+fr:
+  shared:
+    header:
+      title: 'Cell Fight'
+      welcome: "Bienvenue dans l'arène Cell Fight"
+
+    nav:
+      fighters: 'Combattants'
+
+      verbose:
+        fighters: 'Accéder à la liste des combattants'

@@ -1,0 +1,5 @@
+.alert.alert-dismissible.fade.show.text-center{ role: :alert, class: "alert-#{type}" }
+  = message.humanize
+  %button.close{ type: :button, data: { dismiss: :alert } }
+    %span{ aria: { hidden: true } }
+      &times;

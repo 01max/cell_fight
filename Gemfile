@@ -26,6 +26,10 @@ gem 'execjs'
 gem 'mini_racer'
 
 gem 'dotenv-rails'
+gem 'haml'
+
+gem 'jquery-rails'
+gem 'bootstrap'
 
 group :development, :test do
   gem 'faker'

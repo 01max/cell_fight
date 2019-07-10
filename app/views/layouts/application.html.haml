@@ -1,0 +1,20 @@
+!!!
+%html
+  %head
+    %meta{ content: 'text/html; charset=UTF-8', 'http-equiv' => 'Content-Type' }
+    %meta{ name: 'turbolinks-root', content: '/' }
+
+    %title= t('shared.header.title')
+
+    = stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload'
+    = csrf_meta_tags
+    = javascript_include_tag 'application', 'data-turbolinks-eval': false, 'data-turbolinks-track': 'reload'
+
+  %body
+    = render '/shared/header'
+    = render '/shared/alerts', notices: notice, warnings: alert
+
+    .container-fluid
+      .row
+        .col-12.col-md-10.offset-md-1
+          = yield

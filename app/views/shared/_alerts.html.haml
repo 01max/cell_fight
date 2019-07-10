@@ -1,0 +1,13 @@
+- notices = notices.values.flatten.compact.uniq if notices.is_a?(Hash)
+- notices = [notices].flatten.compact.uniq if !notices.is_a?(Enumerable)
+- warnings = warnings.values.flatten.compact.uniq if warnings.is_a?(Hash)
+- warnings = [warnings].flatten.compact.uniq if !warnings.is_a?(Enumerable)
+
+.row
+  .col-10.offset-xs-1.col-sm-6.offset-sm-3
+
+    - notices.each do |message|
+      = render '/shared/alert', message: message, type: :info
+
+    - warnings.each do |message|
+      = render '/shared/alert', message: message, type: :warning
