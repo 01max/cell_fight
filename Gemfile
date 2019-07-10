@@ -30,6 +30,9 @@ gem 'rails-i18n'
 
 gem 'haml'
 
+gem 'pagy'
+gem 'simple_form'
+
 gem 'jquery-rails'
 gem 'bootstrap'
 gem 'font_awesome5_rails'

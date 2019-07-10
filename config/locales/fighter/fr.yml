@@ -12,9 +12,11 @@ fr:
         id: id
         name: nom
 
-        attack_base_points: point de base d'attaque
-        defense_base_points: point de base de défense
-        health_base_points: point de base de santé
+        attack_base_points: points de base d'attaque
+        defense_base_points: points de base de défense
+        health_base_points: points de base de santé
+
+        total_base_points: points de base
 
     errors:
       models:

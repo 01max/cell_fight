@@ -1,0 +1,14 @@
+- attributes = %w(id name total_base_points attack_base_points defense_base_points health_base_points)
+
+.card
+  .card-header
+    %h2= @fighter
+
+  .card-body
+    .row
+      .col-6
+        %ul.list-group
+          - attributes.each do |attribute|
+            %li.list-group-item
+              %h6= t("activerecord.attributes.fighter.#{attribute}").humanize
+              %span= @fighter.send(attribute)

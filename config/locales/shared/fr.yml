@@ -9,3 +9,24 @@ fr:
 
       verbose:
         fighters: 'Accéder à la liste des combattants'
+
+    action:
+      save: 'Enregistrer'
+      update: 'Modifier'
+
+    notice:
+
+      successful_creation: Le %{klass} "%{instance}" a été créé avec succès.
+      successful_creation_f: La %{klass} "%{instance}" a été créée avec succès.
+      successful_creation_v: L'%{klass} "%{instance}" a été créé avec succès.
+      successful_creation_vf: L'%{klass} "%{instance}" a été créée avec succès.
+
+      successful_update: Le %{klass} "%{instance}" a été modifié avec succès.
+      successful_update_f: La %{klass} "%{instance}" a été modifiée avec succès.
+      successful_update_v: L'%{klass} "%{instance}" a été modifié avec succès.
+      successful_update_vf: L'%{klass} "%{instance}" a été modifiée avec succès.
+
+      successful_destruction: Le %{klass} "%{instance}" a été supprimé avec succès.
+      successful_destruction_f: La %{klass} "%{instance}" a été supprimée avec succès.
+      successful_destruction_v: L'%{klass} "%{instance}" a été supprimé avec succès.
+      successful_destruction_vf: L'%{klass} "%{instance}" a été supprimée avec succès.
