@@ -83,6 +83,7 @@ class FightersController < ApplicationController
         :attack_base_points,
         :defense_base_points,
         :health_base_points,
+        :color_code
       ]
     end
 
