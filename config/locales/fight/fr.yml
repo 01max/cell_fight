@@ -1,0 +1,25 @@
+
+fr:
+  activerecord:
+    models:
+      fight:
+        zero: combat
+        one: combat
+        other: combats
+
+    attributes:
+      fight:
+        id: id
+
+        fighter_a: combattant a
+        fighter_b: combattant b
+        winner: gagnant
+        hits: échanges de coups
+
+    errors:
+      models:
+        fight:
+          fighter_a:
+            opponents_must_be_differents: "Les combattants doivent être différents"
+          fighter_b:
+            opponents_must_be_differents: "Les combattants doivent être différents"

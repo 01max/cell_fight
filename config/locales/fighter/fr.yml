@@ -12,14 +12,14 @@ fr:
         id: id
         name: nom
 
-        attack_base_points: points de base d'attaque
-        defense_base_points: points de base de défense
-        health_base_points: points de base de vitalité
+        attack_base_points: nombre de chromosomes d'attaque
+        defense_base_points: nombre de chromosomes de défense
+        health_base_points: nombre de chromosomes de vitalité
 
-        total_base_points: points de base
+        total_base_points: nombre de chromosomes
 
     errors:
       models:
         fighter:
           attack_base_points:
-            total_base_points_must_be_below: "Le total des points de base distribués doit être inférieur à %{max_value}"
+            total_base_points_must_be_below: "Le total des chromosomes distribués doit être inférieur à %{max_value}"
