@@ -25,10 +25,13 @@ class Fighter < ApplicationRecord
       less_than_or_equal_to: MAX_HEALTH_BASE_POINTS,
       only_integer: true
     }
+  validates :color_code, presence: true, length: { is: 6 }
+  validates_format_of :color_code, with: /\A[0-9a-fA-F]{6}\z/
 
   validate :has_valid_base_points?
 
   after_initialize :set_default_base_points
+  after_initialize :set_default_color
 
   # String version of the instance (using +name+ & +id+).
   # @return [String]
@@ -78,5 +81,11 @@ class Fighter < ApplicationRecord
     self.attack_base_points ||= 0
     self.defense_base_points ||= 0
     self.health_base_points ||= 0
+  end
+
+  # Set a default value for color_code.
+  #
+  def set_default_color
+    self.color_code ||= SecureRandom.hex(3)
   end
 end
