@@ -1,8 +1,23 @@
+
 fr:
   activerecord:
+    models:
+      fighter:
+        zero: combattant
+        one: combattant
+        other: combattants
+
+    attributes:
+      fighter:
+        id: id
+        name: nom
+
+        attack_base_points: point de base d'attaque
+        defense_base_points: point de base de défense
+        health_base_points: point de base de santé
+
     errors:
       models:
         fighter:
-          attributes:
-            attack_base_points:
-              total_base_points_must_be_below: "Le total des points de base distribués doit être inférieur à %{max_value}"
+          attack_base_points:
+            total_base_points_must_be_below: "Le total des points de base distribués doit être inférieur à %{max_value}"

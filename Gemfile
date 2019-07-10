@@ -26,6 +26,8 @@ gem 'execjs'
 gem 'mini_racer'
 
 gem 'dotenv-rails'
+gem 'rails-i18n'
+
 gem 'haml'
 
 gem 'jquery-rails'

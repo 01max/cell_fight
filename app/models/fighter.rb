@@ -28,7 +28,7 @@ class Fighter < ApplicationRecord
 
   validate :has_valid_base_points?
 
-  before_validation :set_default_base_points
+  after_initialize :set_default_base_points
 
   # String version of the instance (using +name+ & +id+).
   # @return [String]
@@ -65,7 +65,7 @@ class Fighter < ApplicationRecord
   #
   def has_valid_base_points?
     if total_base_points > MAX_TOTAL_BASE_POINTS
-      error_label = I18n.t('activerecord.errors.models.fighter.attributes.attack_base_points.total_base_points_must_be_below', max_value: MAX_TOTAL_BASE_POINTS)
+      error_label = I18n.t('activerecord.errors.models.fighter.attack_base_points.total_base_points_must_be_below', max_value: MAX_TOTAL_BASE_POINTS)
       errors.add(:attack_base_points, error_label)
     end
   end
