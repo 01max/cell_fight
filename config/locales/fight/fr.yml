@@ -11,10 +11,13 @@ fr:
       fight:
         id: id
 
-        fighter_a: combattant a
-        fighter_b: combattant b
+        fighter_a: combattant 1
+        fighter_b: combattant 2
         winner: gagnant
         hits: échanges de coups
+        xp_gain: experience gagnée par le gagnant
+
+        created_at: combattu le
 
     errors:
       models:

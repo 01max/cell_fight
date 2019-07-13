@@ -18,6 +18,8 @@ fr:
 
         total_base_points: nombre de chromosomes
 
+        xp: experience
+
     errors:
       models:
         fighter:

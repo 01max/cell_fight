@@ -1,0 +1,29 @@
+.card
+  .card-header
+    %h2= @fight
+
+  .card-body
+    .row
+      - fighter_a_class = @fight.winner_id == @fight.fighter_a_id ? 'success' : 'danger'
+      - fighter_b_class = @fight.winner_id == @fight.fighter_b_id ? 'success' : 'danger'
+
+      .col-12.col-sm-6.text-center
+        = link_to fighter_path(@fight.fighter_a), class: "btn btn-#{fighter_a_class}" do
+          %i.fas.fa-fist-raised
+          = @fight.fighter_a
+      .col-12.col-sm-6.text-center
+        = link_to fighter_path(@fight.fighter_b), class: "btn btn-#{fighter_b_class}" do
+          %i.fas.fa-fist-raised
+          = @fight.fighter_b
+
+    .row
+      .col-12
+        %hr
+
+    .row
+      .col-12.col-sm-6
+        %ul.list-group
+          - %w(id fighter_a fighter_b winner xp_gain).each do |attribute|
+            %li.list-group-item
+              %h6= t("activerecord.attributes.fight.#{attribute}").humanize
+              %span= @fight.send(attribute)

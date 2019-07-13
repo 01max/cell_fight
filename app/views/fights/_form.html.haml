@@ -1,0 +1,8 @@
+.card.col-12
+  .card-body
+    = simple_form_for([fight]) do |f|
+      = render 'fields', form: f
+
+      .row
+        .col-12.text-center
+          = f.button :submit, t('shared.action.save'), class: 'btn btn-success'

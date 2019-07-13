@@ -4,7 +4,7 @@
 
   .card-body
     .row
-      .col-6
+      .col-12.col-sm-6
         %ul.list-group
           - %w(id name).each do |attribute|
             %li.list-group-item
@@ -14,9 +14,9 @@
           %li.list-group-item.text-center
             %i.fas.fa-vial.h1{ style: "color: ##{@fighter.color_code}" }
 
-      .col-6
+      .col-12.col-sm-6
         %ul.list-group
-          - %w(total_base_points attack_base_points defense_base_points health_base_points).each do |attribute|
+          - %w(total_base_points attack_base_points defense_base_points health_base_points xp).each do |attribute|
             %li.list-group-item
               %h6= t("activerecord.attributes.fighter.#{attribute}").humanize
               %span= @fighter.send(attribute)

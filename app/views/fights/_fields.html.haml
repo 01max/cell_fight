@@ -1,0 +1,8 @@
+.row
+  .col-12.col-sm-6
+    .form-group
+      = form.association :fighter_a, collection: Fighter.all, include_blank: false
+
+  .col-12.col-sm-6
+    .form-group
+      = form.association :fighter_b, collection: Fighter.all, include_blank: false

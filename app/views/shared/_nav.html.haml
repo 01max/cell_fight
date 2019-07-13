@@ -1,7 +1,13 @@
 - fighters_class = %w(fighters).include?(params['controller']) ? 'active' : ''
+- fights_class = %w(fights).include?(params['controller']) ? 'active' : ''
 
 %ul.nav.navbar-nav
   %li.nav-item
     = link_to fighters_path, { class: "nav-link #{fighters_class}" } do
       %i.fas.fa-vial
       = Fighter.model_name.human.pluralize.humanize
+
+  %li.nav-item
+    = link_to fights_path, { class: "nav-link #{fights_class}" } do
+      %i.fas.fa-vials
+      = Fight.model_name.human.pluralize.humanize
