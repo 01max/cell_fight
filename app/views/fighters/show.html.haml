@@ -20,3 +20,10 @@
             %li.list-group-item
               %h6= t("activerecord.attributes.fighter.#{attribute}").humanize
               %span= @fighter.send(attribute)
+
+      - unless @won_fights.empty?
+        .col-12
+          %hr
+
+        .col-12
+          = render 'fights/list', fights: @won_fights, hide_new: true, title: t('activerecord.attributes.fighter.won_fights').humanize

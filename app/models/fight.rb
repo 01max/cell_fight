@@ -14,6 +14,8 @@ class Fight < ApplicationRecord
   after_create :distribute_xp!
   before_create :start!
 
+  before_save :set_title
+
   # String version of the instance (using +name+ & +id+).
   # @return [String]
   #
@@ -88,5 +90,9 @@ class Fight < ApplicationRecord
       return false
     end
     return true
+  end
+
+  def set_title
+    self.title = self.to_s
   end
 end

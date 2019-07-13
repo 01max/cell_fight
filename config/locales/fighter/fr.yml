@@ -19,6 +19,7 @@ fr:
         total_base_points: nombre de chromosomes
 
         xp: experience
+        won_fights: combats gagnés
 
     errors:
       models:

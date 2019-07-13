@@ -23,7 +23,7 @@
     .row
       .col-12.col-sm-6
         %ul.list-group
-          - %w(id fighter_a fighter_b winner xp_gain).each do |attribute|
+          - %w(id fighter_a fighter_b winner xp_gain created_at).each do |attribute|
             %li.list-group-item
               %h6= t("activerecord.attributes.fight.#{attribute}").humanize
               %span= @fight.send(attribute)

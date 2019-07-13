@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_07_10_153353) do
+ActiveRecord::Schema.define(version: 2019_07_13_152244) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "hstore"
@@ -35,6 +35,7 @@ ActiveRecord::Schema.define(version: 2019_07_10_153353) do
     t.integer "xp_gain", default: 0
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.string "title"
     t.index ["fighter_a_id"], name: "index_fights_on_fighter_a_id"
     t.index ["fighter_b_id"], name: "index_fights_on_fighter_b_id"
     t.index ["winner_id"], name: "index_fights_on_winner_id"

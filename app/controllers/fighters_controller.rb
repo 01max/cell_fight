@@ -8,6 +8,7 @@ class FightersController < ApplicationController
 
   # GET /fighters/1
   def show
+    @won_fights = @fighter.won_fights
   end
 
   # GET /fighters/new

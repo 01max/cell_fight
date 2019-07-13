@@ -10,6 +10,7 @@ fr:
     attributes:
       fight:
         id: id
+        title: titre
 
         fighter_a: combattant 1
         fighter_b: combattant 2

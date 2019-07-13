@@ -8,6 +8,8 @@ class Fighter < ApplicationRecord
   MAX_DEFENSE_BASE_POINTS = ENV['MAX_DEFENSE_BASE_POINTS'].to_i
   MAX_HEALTH_BASE_POINTS = ENV['MAX_HEALTH_BASE_POINTS'].to_i
 
+  has_many :won_fights, class_name: :Fight, foreign_key: :winner_id
+
   validates :name, presence: true
 
   validates :attack_base_points,

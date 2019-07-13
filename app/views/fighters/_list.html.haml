@@ -29,4 +29,5 @@
                     = link_to edit_fighter_path(fighter), class: 'btn btn-sm btn-warning', title: t('shared.action.update') do
                       %i.fas.fa-fw.fa-edit
 
-      .col-12.justify-content-center!= pagy_bootstrap_nav(@pagy)
+      - if local_assigns[:pagy]
+        .col-12.justify-content-center!= pagy_bootstrap_nav(pagy)

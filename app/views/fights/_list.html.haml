@@ -1,7 +1,9 @@
+- title = local_assigns[:title] ? title : Fight.model_name.human.pluralize.humanize
+
 .card
 
   .card-header
-    %h2= Fight.model_name.human.pluralize.humanize
+    %h2= title
 
   .card-body
     .row
@@ -13,22 +15,22 @@
             %thead.thead-dark.text-center
               %tr
                 %th{ scope: 'col' }= t('activerecord.attributes.fight.id').humanize
-                %th{ scope: 'col' }= t('activerecord.attributes.fight.fighter_a').humanize
-                %th{ scope: 'col' }= t('activerecord.attributes.fight.fighter_b').humanize
+                %th{ scope: 'col' }= t('activerecord.attributes.fight.title').humanize
                 %th{ scope: 'col' }= t('activerecord.attributes.fight.created_at').humanize
                 %th
-                  = link_to new_fight_path, class: 'btn btn-success' do
-                    %i.fas.fa-fw.fa-plus
+                  - unless local_assigns[:hide_new]
+                    = link_to new_fight_path, class: 'btn btn-success' do
+                      %i.fas.fa-fw.fa-plus
 
             %tbody
               - fights.each do |fight|
                 %tr
                   %th.text-center{ scope: 'row' }= fight.id
-                  %td= fight.fighter_a
-                  %td= fight.fighter_b
+                  %td= fight.title
                   %td= fight.created_at
                   %td.text-center
                     = link_to fight_path(fight), class: 'btn btn-sm btn-info', title: t('shared.action.show') do
                       %i.fas.fa-fw.fa-eye
 
-      .col-12.justify-content-center!= pagy_bootstrap_nav(@pagy)
+      - if local_assigns[:pagy]
+        .col-12.justify-content-center!= pagy_bootstrap_nav(pagy)
